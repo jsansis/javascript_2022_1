@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arreglo = ["manzana","pera","fresa","coco","banano"];
+        texto="";
+        /*for(var i=0;i<arreglo.length;i++)
+            console.log("La fruta es: "+arreglo[i]);*/
+        //for of -- Para uso de arreglos
+        /*for (var it of arreglo){
+            console.log(it);
+        }*/
+        //arreglo.forEach(elemento => console.log(elemento));
+        let x = 0
+        while (x<=9){
+            texto += `El valor de x es: ${x}. Y su cuadrado es: ${x**2}\n`;
+            x++;
+        }
+        console.log(texto);
+    </script>
+</body>
+</html>
