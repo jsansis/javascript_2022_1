@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arregloComida = ["carne","manzana","postre","verduras"];
+        let miCadena= "Estoy realmente hambriento por comer";
+        console.log(miCadena);
+        let miCadenaMayuscula = miCadena.toUpperCase();
+        console.log(miCadenaMayuscula);
+        let locacion = miCadena.search("realmente");
+        let palabraEspecial = miCadena.substr(locacion,9);
+        console.log(palabraEspecial);
+        palabraEspecial=palabraEspecial.toUpperCase();
+        console.log(palabraEspecial);
+        var nuevaCadena = miCadena.replace("realmente",palabraEspecial);
+        console.log(nuevaCadena);
+        console.log(`${miCadena} ${arregloComida[0]}`);
+        for(var it of arregloComida)
+            console.log(`${miCadena} ${it}`);
+        for(var it in arregloComida){
+            if(it%2===0)
+                arregloComida[it]=arregloComida[it].toUpperCase();
+            console.log(`${miCadena} ${arregloComida[it]}`);
+        }        
+    </script>
+</body>
+</html>

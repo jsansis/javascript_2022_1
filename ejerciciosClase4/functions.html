@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<h1>Funciones en javascript</h1>
+	
+    <script>
+		function doStuff(){
+			let arregloComida = ["carne","manzana","postre","verduras"];
+			let miCadena= "Estoy realmente hambriento por comer";
+			for(var it in arregloComida){
+				//Chequear si el indice es par
+				if(it%2===0)
+					//Si es par imprimir la cadena con el valor del arreglo en mayúscula.
+					console.log(`${miCadena} ${arregloComida[it].toUpperCase()}`);
+				else
+					//Si no es par imprimir la cadena sin hacer modificaciones
+					console.log(`${miCadena} ${arregloComida[it]}`);   
+			}        
+		}
+		
+        window.doStuff();
+		/*Parametros*/
+		function imprimirMensaje(mensaje){
+			var upperMensaje = mensaje.toUpperCase();
+			console.log(upperMensaje);
+		}
+		
+		//imprimirMensaje("hola Mundo");
+		
+		function suma(num1, num2){
+			console.log(num1+num2);
+			/*sum = num1+num2;
+			  console.log(sum)	*/
+		}	
+		//console.log(suma(2,3));
+		//suma(2,3);
+		
+		function retornaSuma(num1, num2){
+			/*let sum = num1+num2;
+			  return sum; */
+			return num1+num2;
+		}
+		//console.log(retornaSuma(5,6));
+		
+		/*Ejemplo Util*/
+		
+		
+		//Paso 1: Obtener el numero de valores potenciales
+		//Por ejemplo si se desea un numero entre 5 y 10 las posibilidades son 5,6,7,8,9,10 es decir 6 valores (max - min +1)
+		/*function randomInt(min,max){
+			var numValores = max - min + 1;
+			console.log(numValores);
+		}
+		randomInt(5,10);*/
+		
+		//Paso 2: generar un numero aleatorio entre 0 y 1 y posteriormente se multiplica por la cantidad de numeros potenciales
+		/*function randomInt(min,max){
+			var numValores = max - min + 1;
+			var numRandom = Math.random();
+			var valorRandom = numRandom * numValores;
+			console.log(valorRandom);
+		}
+		randomInt(5,10);*/
+		
+		//Paso 3: Redondear hacia abajo el numero obtenido con el fin de obtener un numero entero
+		/*function randomInt(min,max){
+			var numValores = max - min + 1;
+			var numRandom = Math.random();
+			var valorRandom = numRandom * numValores;
+			var numRedondeado = Math.floor(valorRandom)
+			console.log(numRedondeado);
+		}
+		randomInt(5,10);*/
+		
+		
+		//Paso 4: tomar el numero redondeado y sumarle el valor min
+		/*function randomInt(min,max){
+			var numValores = max - min + 1;
+			var numRandom = Math.random();
+			var valorRandom = numRandom * numValores;
+			var numRedondeado = Math.floor(valorRandom);
+			var finalNum = numRedondeado + min;
+			console.log(finalNum);
+		}
+		randomInt(5,10);*/
+		
+		//Paso 5: Hacer la función útil
+		let arregloComida = ["carne","manzana","postre","verduras"];
+		function randomInt(min,max){
+			var numValores = max - min + 1;
+			var numRandom = Math.random();
+			var valorRandom = numRandom * numValores;
+			var numRedondeado = Math.floor(valorRandom);
+			var finalNum = numRedondeado + min;
+			//console.log(finalNum);
+			return finalNum;
+		}
+		//console.log(arregloComida[randomInt(0,3)]);
+		
+		//Refactorizada
+		function randomInt(min,max){
+			//Crear un numero aleatorio dadas las cotas inferior y superior
+			return Math.floor((max - min + 1)*Math.random())+min;
+		}
+		//console.log(arregloComida[randomInt(0,3)]);
+		
+		
+		//Función Anónima
+		var saludo = function(){
+			var nombre = prompt("Dime tu nombre");
+			console.log("Hola "+nombre);
+		}
+		
+		//saludo();
+		
+		//Función Flecha
+		let randomFlecha = (min,max) =>  Math.floor((max - min + 1)*Math.random())+min;
+		//console.log(arregloComida[randomFlecha(0,3)]);
+    </script>
+</body>
+</html>
