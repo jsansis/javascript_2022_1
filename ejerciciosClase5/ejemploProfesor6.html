@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to create an Input Button with a "Click me" text.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var x = document.createElement("INPUT");
+  x.setAttribute("type", "button");
+  x.setAttribute("value", "Click me");
+  x.style.color="red";
+  document.body.appendChild(x);
+}
+</script>
+
+</body>
+</html>
