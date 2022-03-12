@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        PASE EL MOUSE SOBRE LA CAJA
+    </h1>
+    <div>
+
+    </div>
+    <script>
+        let titleBox=document.querySelector("h1");
+        let miDiv=document.querySelector("div");
+
+        miDiv.addEventListener("mouseover",function(){
+            titleBox.innerHTML="EL MOUSE ESTA SOBRE LA CAJA";
+        });
+        miDiv.addEventListener("mouseout",function(){
+            titleBox.innerHTML="EL MOUSE ESTA FUERA DE LA CAJA";
+        });
+        titleBox.addEventListener("mouseover",function(){
+            titleBox.innerHTML="PASE EL MOUSE SOBRE LA CAJA";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://google.com" class="link">Mi enlace</a>
+	<button>No tocar!!</button>
+    <script>
+       var btn=document.querySelector("button");
+       var enlace = document.querySelector(".link");
+	   
+	   btn.addEventListener('click',function(evento){
+        /*prevent default bejavoir*/
+        evento.preventDefault();   
+		evento.target.style.background="red";	
+        alert("Te dije NO TOCAR!!!");
+	   });
+
+       enlace.addEventListener('click',function(evt){
+        //evt.preventDefault();
+        alert("No hay google para ti!!");
+       })
+	   
+	   
+    </script>
+</body>
+</html>

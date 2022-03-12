@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get">
+        <label> Digite su nombre: <input type="text" name="nombre"></label>
+        <input type="submit">
+    </form>
+    <script>
+       var miFormulario=document.querySelector("form");
+       miFormulario.addEventListener("submit",function(e){
+           //e.preventDefault();
+           var formData = document.querySelector("input").value;
+           alert(formData);
+       })
+       /* propuesta de un ejemplo con action
+       <form method="get" action="xxx.php">
+        <label> Digite su nombre: <input type="text" name="nombre"></label>
+        <input type="submit">
+    </form>*/
+       
+	   
+    </script>
+</body>
+</html>
