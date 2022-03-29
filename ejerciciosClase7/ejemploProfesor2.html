@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <h1>
+        Testing el scope en javascript
+    </h1>
+    <p>Aqui hay un párrafo</p>
+    <p>Aqui hay otro párrafo</p>
+    <p>Aqui está otro párrafo más</p>
+    <script>
+        (function(){  
+            var myPs = document.querySelectorAll("p");
+            for (var i = 0; i<myPs.length; i ++){
+                myPs[i].style.color = "red";
+            }
+        }());
+
+      
+
+        
+        // otra forma
+        (function hagaAlgo(){
+            console.log("hice algo");
+        })();
+
+        /*//Paso 1
+        ()
+        //Paso 2
+        (function(){})
+        //Paso 3
+        (function(){}())
+        //Paso 4
+        (function(){var parrafo=document.querySelector("#miParrafo");
+        var miBtn=document.querySelector("button");
+        miBtn.addEventListener("click",function(){
+            parrafo.style.color="green";
+        })}());*/
+    </script>
+
+</body>
+</html>

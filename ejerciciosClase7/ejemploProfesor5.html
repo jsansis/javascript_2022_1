@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <h1>
+        Testing el scope en javascript
+    </h1>
+    <p>Aqui hay un párrafo</p>
+    <p>Aqui hay otro párrafo</p>
+    <p>Aqui está otro párrafo más</p>
+    <script>
+        
+       (function(){
+            const queso= "El queso es un buen alimento";
+            console.log(queso);
+            //queso="el queso sabe mal";
+       }());
+
+       console.log(queso);
+    </script>
+
+</body>
+</html>
