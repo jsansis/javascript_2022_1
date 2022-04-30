@@ -1,0 +1,76 @@
+Proyecto de marcado y menús
+
+Notas:
+	Notese que el articulo viene primero y el lateral viene segundo.
+	La forma de navegación sigue un schema de marcación muy comun con un menu dentro de otro menu
+	En el css flexbox con row-reverse es usado para mostrar el menu de navegación a la izquierda
+	la lista desordenada embebida va completa dentro del parent lista
+	Generalmente se desea que el articulo vaya en la parte alta del codigo para optimizar el motor de búsqueda.
+	El HTML debe ser correcto, si hay fallas es probable que nada funcione.
+
+Estrategia basica:
+		Los submenús deben estar inicialmente ocultos y cuando se hace click en el menu padre, se mostrarán.
+		Esto debe ser complementado con swaping de javascript entre dos clases entre dos clases en el submenu cuando se hace click en el menú padre.
+		Inicialmente los submenús no tienen el .hide-menu class en ellos.
+
+Se muestra la página como viene inicialmente.
+
+JAVASCRIPT:
+
+Primer paso:
+Se realiza la captura de todos los submenus (ul li ul) se recorre la colección asignandole la clase (hide-menu)
+Se muestra nuevamente la pagina.
+
+Segundo Paso:
+añadir un click handler a los menus principales.
+Tip: prevent el default behavior
+Tip: emplear el hecho de que todos tienen la clase menulink.
+Se hace:
+	const thisMenu=this.parentNode.querySelector('ul');
+	console.log(thisMenu.innerHTML);
+Esto obtiene todos los submenus del menú mas grande al que se dé click.
+
+Tercer Paso:
+Cambiar la clase en ese elemento por "show-menu"
+Mostrar funcionalidad.
+Mostrar que no se cierra.	
+
+Cuarto paso:
+Si el menu tiene la clase "hide-menu" cambiar a "show-menu", de lo contrario setear a "hide-menu"	
+apoyarse en: https://developer.mozilla.org/es/docs/Web/API/Element/classList
+
+Quinto paso:
+Aplicar la clase hide a todos los menus que no sean el seleccionado	
+
+Sexto paso:
+Crear una función para esconder menús.
+
+Séptimo paso aplicar buenas prácticas.	
+
+JQUERY
+
+Paso uno: se esconde el subMenu: 
+	$('ul li ul').css('display','none');
+	
+Paso dos:
+		Obtener el next UL:
+		$('.menulink').click(function(e){
+			const thisMenu = $(this).next('ul');
+			console.log(thisMenu.html());
+		})
+	
+Paso tres:
+		esconder o mostrar el menu:
+		if(thisMenu.is(':visible')){
+				thisMenu.hide();
+			}else{
+				thisMenu.show();
+			}
+	o se uede emplear la función toggle() se hace la demostración.
+	
+Paso cuatro
+		mostrar solo el menu que se seleccionó
+		Se puede utilizar mot asi: $('ul li ul').not(thisMenu).hide();
+		
+Proponer los retos jquery		
+		
